@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main() {
+    FILE *f = fopen("student.txt", "w");
+    fprintf(f, "Asha 101");
+    fclose(f);
+    return 0;
+}

@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main() {
+    int i;
+    float price[5], key;
+    for (i = 0; i < 5; i++)
+        scanf("%f", &price[i]);
+    scanf("%f", &key);
+    for (i = 0; i < 5; i++)
+        if (price[i] == key)
+            printf("Item Found");
+    return 0;
+}

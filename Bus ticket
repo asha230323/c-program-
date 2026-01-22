@@ -1,0 +1,11 @@
+#include <stdio.h>
+struct bus {
+    int seat;
+    float fare;
+};
+int main() {
+    struct bus b;
+    scanf("%d %f", &b.seat, &b.fare);
+    printf("%.2f", b.fare);
+    return 0;
+}

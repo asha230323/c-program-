@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    float purchaseAmount, discount;
+
+    printf("Enter total purchase amount: ");
+    scanf("%f", &purchaseAmount);
+
+    if (purchaseAmount >= 5000) {
+        discount = purchaseAmount * 0.10;
+        printf("Customer gets a discount of Rs. %.2f\n", discount);
+    } else {
+        printf("Customer is not eligible for discount\n");
+    }
+
+    return 0;
+}

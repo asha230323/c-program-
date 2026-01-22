@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+struct Student {
+    int id;
+};
+
+int main() {
+    struct Student s[5];
+    int count = 5;
+
+    printf("Number of records = %d", count);
+    return 0;
+}

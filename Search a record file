@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    FILE *fp;
+    char line[100], search[20];
+    int found = 0;
+
+    fp = fopen("records.txt", "r");
+    if (fp == NULL) {
+        printf("File not found");
+        return 1;
+    }
+
+    printf("Enter text to search: ");
+    scanf("%s", search);
+
+    while (fgets(line, sizeof(line), fp)) {
+        if (strstr(line, search)) {
+            printf("Record Found: %s", line);
+            found = 1;
+        }
+    }
+
+    if (!found)
+        printf("Record not found");
+
+    fclose(fp);
+    return 0;
+}

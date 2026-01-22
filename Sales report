@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main() {
+    FILE *f = fopen("sales.txt", "w");
+    fprintf(f, "Total Sales: 50000");
+    fclose(f);
+    return 0;
+}

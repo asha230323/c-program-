@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main() {
+    FILE *f = fopen("login.txt", "w");
+    fprintf(f, "admin 1234");
+    fclose(f);
+    return 0;
+}

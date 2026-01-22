@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    FILE *fp, *temp;
+    char line[100], old[20], newrec[20];
+
+    fp = fopen("records.txt", "r");
+    temp = fopen("temp.txt", "w");
+
+    printf("Enter record to update: ");
+    scanf("%s", old);
+    printf("Enter new record: ");
+    scanf("%s", newrec);
+
+    while (fgets(line, sizeof(line), fp)) {
+        if (strstr(line, old)) {
+            fprintf(temp, "%s\n", newrec);
+        } else {
+            fputs(line, temp);
+        }
+    }
+
+    fclose(fp);
+    fclose(temp);
+
+    remove("records.txt");
+    rename("temp.txt", "records.txt");
+
+    printf("Record updated successfully");
+    return 0;
+}
